@@ -1,4 +1,13 @@
 {
+  "name": "node-backend-api",
+  "version": "1.0.0",
+  "description": "Backend NodeJS API deployed using Azure DevOps Classic Pipeline",
+  "main": "index.js",
+
+  "scripts": {
+    "start": "node index.js"
+  },
+  
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cloudinary": "^1.41.3",
@@ -11,5 +20,11 @@
     "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^7.0.6",
     "socket.io": "^4.8.1"
+  }
+
+  "devDependencies": {},
+
+  "engines": {
+  "node": "20.x"
   }
 }

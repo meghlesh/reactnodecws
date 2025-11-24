@@ -20,7 +20,7 @@
     "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^7.0.6",
     "socket.io": "^4.8.1"
-  }
+  },
 
   "devDependencies": {},
 

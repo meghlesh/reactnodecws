@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/meghlesh/reactnodecws.git'
@@ -11,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies - Backend') {
             steps {
-                dir('backend') {
+                dir('propcwsback') {
                     sh 'npm install'
                 }
             }
@@ -19,32 +18,21 @@ pipeline {
 
         stage('Build Backend') {
             steps {
-                dir('backend') {
-                    sh 'npm run build || echo "No build step for backend"'
+                dir('propcwsback') {
+                    sh 'npm run build || true'
                 }
             }
         }
 
         stage('Install Dependencies - Frontend') {
             steps {
-                dir('frontend') {
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
 
         stage('Build Frontend') {
             steps {
-                dir('frontend') {
-                    sh 'npm run build'
-                }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Your deployment commands here"
-                // Example (copy build folder to nginx/tomcat)
+                sh 'npm run build'
             }
         }
     }
